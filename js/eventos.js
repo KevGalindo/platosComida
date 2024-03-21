@@ -16,12 +16,12 @@ const platos = [
     },
     {
         "nombre": "Lomo Saltado",
-        "descripcion": "Plato emblemático de la gastronomía peruana, consiste en pescado fresco marinado en limón con cebolla roja, ají limo y cilantro. ",
+        "descripcion": "Plato emblemático de la gastronomía peruana, consiste en pescado fresco marinado en limón con cebolla roja, ají limo y cilantro.",
         "esRico": true
     },
     {
         "nombre": "Aji de Gallina",
-        "descripcion": "Plato hecho con pollo deshilachado en una salsa cremosa de ají amarillo, pan remojado en leche, nueces y queso. Se sirve con arroz y papas cocidas. Es rico, suave y ligeramente picante.",
+        "descripcion": "Plato hecho con pollo deshilachado en una salsa cremosa de ají amarillo, pan remojado en leche, nueces y queso. Es rico, suave y ligeramente picante.",
         "esRico": true
     },
     {
@@ -36,7 +36,7 @@ const platos = [
     },
     {
         "nombre": "Pollo a la Brasa",
-        "descripcion": "Pollo marinado en una mezcla de especias y hierbas aromáticas, asado a la parrilla hasta que la piel esté crujiente y dorada. Se sirve con papas fritas, ensalada y salsa de ají.",
+        "descripcion": "Pollo marinado en una mezcla de especias y hierbas aromáticas, asado a la parrilla hasta que la piel esté crujiente y dorada.",
         "esRico": true
     }
 ];
@@ -59,3 +59,40 @@ platos.forEach(function(plato) {
 });
 
 dishElement.innerHTML = contenido;
+
+const boton = document.getElementById("enviarPlato");
+
+boton.addEventListener("click", function(){
+    const nombre = document.getElementById("nombrePlato").value;
+    const descripcion = document.getElementById("descripcionPlato").value;
+    const esDelicioso = document.getElementById("esDelicioso").value;
+
+    const nuevoPlato = {
+        nombre: nombre,
+        descripcion: descripcion,
+        esRico: esDelicioso === "SI"
+    };
+
+    platos.push(nuevoPlato);
+    actualizarPlatos();
+});
+
+function actualizarPlatos() {
+    let contenido = "";
+    platos.forEach(function(plato) {
+        let claseicon = plato.esRico ? "rico" : "no-rico";
+        let delicioso = plato.esRico ? "¡Delicioso!" : "No tan delicioso";
+        const template = `
+            <div class="plato">
+                <div class="icon icon-${claseicon}">${delicioso}</div>
+                <div class="data">
+                    <h4>${plato.nombre}</h4>
+                    <p>${plato.descripcion}</p>
+                </div>
+            </div>
+        `;
+        contenido += template;
+    });
+
+    dishElement.innerHTML = contenido;
+}
