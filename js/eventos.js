@@ -22,7 +22,7 @@ const platos = [
     {
         "nombre": "Aji de Gallina",
         "descripcion": "Plato hecho con pollo deshilachado en una salsa cremosa de ají amarillo, pan remojado en leche, nueces y queso. Se sirve con arroz y papas cocidas. Es rico, suave y ligeramente picante.",
-        "esRico": false
+        "esRico": true
     },
     {
         "nombre": "Anticuchos",
