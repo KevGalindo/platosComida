@@ -1,0 +1,52 @@
+.plato {
+    display: flex;
+    align-items: center;
+    border: solid 1px #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.plato:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.plato .icon {
+    width: 60px;
+    height: 60px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.plato .icon-rico {
+    color: #28a745;
+}
+
+.plato .icon-no-rico {
+    color: #dc3545;
+}
+
+.plato .data {
+    padding: 20px;
+    flex: 1;
+}
+
+.plato .data h4 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.plato .data p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #666;
+}
+
